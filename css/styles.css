@@ -77,9 +77,10 @@ button {
 
 .subtitle {
   color: var(--navy-blue);
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: 500;
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.11;
+  font-weight: 700;
   letter-spacing: 0.02em;
 }
 
@@ -94,13 +95,16 @@ button {
 }
 
 .container {
-  width: 100%;
-  max-width: 1158px;
+  max-width: 428px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 
-/*-------------- HEADER ---------------*/
+.no-scroll {
+  overflow: hidden;
+}
+
+/**-------------- HEADER ---------------*/
 
 .header {
   border-bottom: 1px solid var(--cornflower);
@@ -112,43 +116,13 @@ button {
 .header-container {
   display: flex;
   justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .header-navigation {
   display: flex;
   align-items: center;
-}
-
-.header-menu {
-  display: flex;
-  gap: 40px;
-}
-
-.header-menu-link {
-  display: block;
-  padding: 24px 0;
-  color: var(--navy-blue);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.current {
-  position: relative;
-  color: var(--ocean-color);
-}
-
-.current::after {
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 4px;
-  background-color: var(--ocean-color);
-  border-radius: 2px;
-  content: "";
 }
 
 .logo {
@@ -161,71 +135,171 @@ button {
   color: var(--iris-color);
 }
 
-.header-logo {
-  margin-right: 76px;
-}
-
 .logo-studio {
   color: var(--navy-blue);
 }
 
-.header-menu-link:hover,
-.header-menu-link:focus {
+.header-menu, .header-adress {
+  display: none;
+}
+
+.header-menu-btn {
+  width: 32px;
+  height: 22px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.menu-icon {
+  fill: var(--navy-blue);
+}
+
+/**-------------- MOBIL ---------------*/
+
+.mob-menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 24px 24px 40px 40px;
+  background-color: var(--white-color);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-menu-container.is-hidden {
+  transform: scale(0);
+}
+
+.mob-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  color: var(--navy-blue);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid var(--cornflower);
+  border-radius: 50%;
+  margin-bottom: 32px;
+  background-color: transparent;
+}
+
+.mob-menu-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.mob-menu-link {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: var(--navy-blue);
+}
+
+.mob-menu-link:focus {
   color: var(--ocean-color);
 }
 
-.header-adress {
+.mob-menu-link.is-active {
+  color: var(--ocean-color);
+}
+
+.mobil-adress {
+  margin-bottom: 48px;
+}
+
+.mobil-adress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   font-style: normal;
 }
 
-.header-adress-list {
-  display: flex;
-  gap: 40px;
-  align-items: center;
+.mobil-adress-item:first-child .mobil-adress-link {
+  font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    color: var(--iris-color);
 }
 
-.header-adress-link {
-  display: block;
-  padding: 24px 0;
-  color: var(--slate-color);
-  font-size: 16px;
-  line-height: 1.5;
+.mobil-adress-item:last-child .mobil-adress-link {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
   letter-spacing: 0.02em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--slate-color);
 }
 
-.header-adress-link:hover,
-.header-adress-link:focus {
-  color: var(--ocean-color);
+.mobil-social-list {
+  display: flex;
+  gap: 56px;
+}
+
+.mobil-social-item {
+  width: 40px;
+  height: 40px;
+  
+}
+
+.mobil-social-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--iris-color);
+  border-radius: 50%;
+}
+
+.mobil-social-icon {
+  fill: var(--cloud-color);
 }
 
 /*-------------- HERO ---------------*/
 
 .hero {
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 188px 0;
+  padding: 112px 0;
   background-color: var(--navy-blue);
-  background-image: linear-gradient(to bottom, var(--background-grey), var(--background-grey)), url(../images/people-office.jpg);
+  background-image: linear-gradient(to bottom, var(--background-grey), var(--background-grey)), url(../images/mobil-hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(to bottom, var(--background-grey), var(--background-grey)), url(../images/mobil-hero-bg@2x.jpg)
+  }
+}
+
 .hero-title {
-  max-width: 496px;
-  margin: 0 auto;
+  max-width: 320px;
+  margin: 0 auto 72px;
   color: var(--white-color);
   text-align: center;
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
 }
 
 .hero-btn {
   display: block;
-  margin: 48px auto 0;
+  margin: 0 auto;
   padding: 16px 32px;
   min-width: 169px;
   font-family: inherit;
@@ -238,6 +312,7 @@ button {
   cursor: pointer;
   border: none;
   border-radius: 4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -246,56 +321,48 @@ button {
   background-color: var(--ocean-color);
 }
 
-/*-------------- FEATURES ---------------*/
+/**-------------- FEATURES ---------------*/
 
 .features {
-  padding: 120px 0;
+  padding: 96px 0;
 }
 
 .feature-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 24px 0;
-  background-color: var(--cloud-color);
-  margin-bottom: 8px;
-  border-radius: 4px;
+  display: none;
 }
 
 .features-list {
   display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  row-gap: 72px;
 }
 
 .feature-item {
-  width: calc((100% - 72px) / 4);
+  width: 100%;
 }
 
 .feature-title {
   margin-bottom: 8px;
 }
 
-/*-------------- ACTIVITY ---------------*/
+.feature-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/**-------------- TEAM ---------------*/
 
 .activity {
-  padding-bottom: 120px;
+  display: none;
 }
 
-.activity-title {
-  margin-bottom: 72px;
-}
-
-.activity-list {
-  display: flex;
-  gap: 24px;
-}
-
-/*-------------- TEAM ---------------*/
+/**-------------- TEAM ---------------*/
 
 .team {
   background-color: var(--cloud-color);
-  padding: 120px 0;
+  padding: 96px 0;
 }
 
 .team-title {
@@ -304,10 +371,14 @@ button {
 
 .team-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  row-gap: 72px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .team-item {
+  max-width: 264px;
   background-color: var(--white-color);
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
@@ -316,6 +387,10 @@ button {
 }
 
 .card-name {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   text-align: center;
   margin-bottom: 8px;
 }
@@ -362,10 +437,10 @@ button {
   fill: var(--cloud-color);
 }
 
-/*-------------- CUSTOMERS ---------------*/
+/**-------------- CUSTOMERS ---------------*/
 
 .customers {
-  padding: 120px 0;
+  padding: 96px 0;
 }
 
 .customers-title {
@@ -374,11 +449,13 @@ button {
 
 .customers-list {
   display: flex;
-  gap: 24px;
+  row-gap: 88px;
+  column-gap: 16px;
+  flex-wrap: wrap;
 }
 
 .customers-item {
-  width: calc((100% - 120px) / 6);
+  width: calc((100% - 16px) / 2);
   height: 88px;
 }
 
@@ -403,7 +480,7 @@ button {
   color: var(--ocean-color);
 }
 
-/*-------------- PORTFOLIO ---------------*/
+/**-------------- PORTFOLIO ---------------*/
 
 .developments {
   padding-top: 96px;
@@ -510,25 +587,27 @@ button {
   border-right: 1px solid var(--cornflower);
 }
 
-/*-------------- FOOTER ---------------*/
+/**-------------- FOOTER ---------------*/
 
 .page-footer {
-  padding: 100px 0;
+  padding: 96px 0;
   background-color: var(--navy-blue);
 }
 
 .footer-container {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-logo {
-  display: inline-block;
-  margin-bottom: 16px;
+  display: block;
+  text-align: center;
+  margin-bottom: 18px;
 }
 
 .footer-logo-block {
-  margin-right: 120px;
+  margin-bottom: 72px;
 }
 
 .page-footer .logo-studio {
@@ -536,12 +615,12 @@ button {
 }
 
 .call-text {
-  max-width: 264px;
+  max-width: 268px;
   color: var(--cloud-color);
 }
 
 .footer-social {
-  margin-right: 80px;
+  margin-bottom: 72px;
 }
 
 .footer-block-name {
@@ -551,6 +630,7 @@ button {
   letter-spacing: 0.02em;
   color: var(--white-color);
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .footer-social-list {
@@ -584,37 +664,45 @@ button {
 }
 
 .subscription-block {
-  flex-grow: 1;
+  align-self: stretch;
 }
 
 .subscription-form {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.subscription-form-label {
+  display: block;
 }
 
 .subscription-form-input {
-  width: 264px;
+  width: 100%;
   height: 40px;
   padding-left: 16px;
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  border: 1px solid var(--white-color);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   color: var(--white-color);
   background-color: transparent;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+  outline: none;
 }
 
 .subscription-form-input::placeholder {
   color: var(--white-color);
+  opacity: 0.6;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
 }
 
 .subscription-form-btn {
-  min-width: 165px;
+  align-self: center;
+  max-width: 165px;
   height: 40px;
   font-size: 16px;
   font-weight: 500;
@@ -641,7 +729,7 @@ button {
   fill: currentColor;
 }
 
-/*-------------- MODAL ---------------*/
+/**-------------- MODAL ---------------*/
 
 .modal {
   position: relative;
@@ -717,8 +805,6 @@ button {
   text-align: center;
   color: var(--navy-blue);
 }
-
-.contacts-form {}
 
 .modal-field {
   margin-bottom: 8px;

@@ -18,6 +18,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/media.css" />
   </head>
 
   <body>
@@ -25,18 +26,18 @@
       <div class="header-container container">
         <nav class="header-navigation">
           <a class="header-logo logo link" href="./index.html"
-            >Web<span class="logo-studio">Studio</span></a
-          >
+            >Web<span class="logo-studio">Studio</span>
+          </a>
           <ul class="header-menu list">
             <li class="header-menu-item">
-              <a class="header-menu-link link current" href="./index.html"
-                >Studio</a
-              >
+              <a class="header-menu-link link current" href="./index.html">
+                Studio
+              </a>
             </li>
             <li class="header-menu-item">
-              <a class="header-menu-link link" href="./portfolio.html"
-                >Portfolio</a
-              >
+              <a class="header-menu-link link" href="./portfolio.html">
+                Portfolio
+              </a>
             </li>
             <li class="header-menu-item">
               <a class="header-menu-link link" href="">Contacts</a>
@@ -59,6 +60,104 @@
             </li>
           </ul>
         </address>
+        <button type="button" class="header-menu-btn" data-menu-open>
+          <svg class="menu-icon" width="32" height="22">
+            <use href="./images/icons.svg#menu"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mob-menu-container is-hidden" data-menu>
+        <div class="block">
+          <button type="button" class="mob-close-btn" data-menu-close>
+            <svg class="close-icon" width="8" height="8">
+              <use href="./images/icons.svg#icon-modal-close"></use>
+            </svg>
+          </button>
+          <ul class="mob-menu-list list">
+            <li class="mob-menu-item">
+              <a
+                class="mob-menu-link link current is-active"
+                href="./index.html"
+              >
+                Studio
+              </a>
+            </li>
+            <li class="mob-menu-item">
+              <a class="mob-menu-link link" href="./portfolio.html">
+                Portfolio
+              </a>
+            </li>
+            <li class="mob-menu-item">
+              <a class="mob-menu-link link" href="">Contacts</a>
+            </li>
+          </ul>
+        </div>
+        <div class="block">
+          <address class="mobil-adress">
+            <ul class="mobil-adress-list list">
+              <li class="mobil-adress-item">
+                <a class="mobil-adress-link link" href="tel:+110001111111">
+                  +11 (000) 111-11-11
+                </a>
+              </li>
+              <li class="mobil-adress-item">
+                <a
+                  class="mobil-adress-link link"
+                  href="mailto:info@devstudio.com"
+                >
+                  info@devstudio.com
+                </a>
+              </li>
+            </ul>
+          </address>
+          <ul class="mobil-social-list list">
+            <li class="mobil-social-item">
+              <a
+                href="https://www.instagram.com/"
+                class="mobil-social-link"
+                target="_blank"
+              >
+                <svg class="mobil-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobil-social-item">
+              <a
+                href="https://twitter.com/"
+                class="mobil-social-link"
+                target="_blank"
+              >
+                <svg class="mobil-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobil-social-item">
+              <a
+                href="https://www.facebook.com/"
+                class="mobil-social-link"
+                target="_blank"
+              >
+                <svg class="mobil-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobil-social-item">
+              <a
+                href="https://www.linkedin.com/"
+                class="mobil-social-link"
+                target="_blank"
+              >
+                <svg class="mobil-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 
@@ -134,6 +233,7 @@
           <ul class="activity-list list">
             <li class="activity-item">
               <img
+                srcset="./images/monitor.jpg 1x, ./images/monitor-2x.jpg 2x"
                 src="./images/monitor.jpg"
                 alt="An image of a computer monitor"
                 width="360"
@@ -142,6 +242,10 @@
             </li>
             <li class="activity-item">
               <img
+                srcset="
+                  ./images/telephones.jpg    1x,
+                  ./images/telephones-2x.jpg 2x
+                "
                 src="./images/telephones.jpg"
                 alt="Images of phones"
                 width="360"
@@ -150,6 +254,10 @@
             </li>
             <li class="activity-item">
               <img
+                srcset="
+                  ./images/application.jpg    1x,
+                  ./images/application-2x.jpg 2x
+                "
                 src="./images/application.jpg"
                 alt="image of the application in the phone"
                 width="360"
@@ -166,14 +274,18 @@
           <ul class="team-list list">
             <li class="team-item">
               <img
+                srcset="
+                  ./images/mark-guerrero.jpg    1x,
+                  ./images/mark-guerrero-2x.jpg 2x
+                "
                 class="card-photo"
-                src="./images/product_designer.jpg"
+                src="./images/mark-guerrero.jpg"
                 alt="Photo of the product designer"
                 width="264"
                 height="260"
               />
               <div class="card-name-container">
-                <h3 class="card-name subtitle">Mark Guerrero</h3>
+                <h3 class="card-name">Mark Guerrero</h3>
                 <p class="job-title">Product Designer</p>
                 <ul class="social-list list">
                   <li class="social-item">
@@ -224,14 +336,15 @@
             </li>
             <li class="team-item">
               <img
+                srcset="./images/tom-ford.jpg 1x, ./images/tom-ford-2x.jpg 2x"
                 class="card-photo"
-                src="./images/frontend_developer.jpg"
+                src="./images/tom-ford.jpg"
                 alt="Photo of the frontend developer"
                 width="264"
                 height="260"
               />
               <div class="card-name-container">
-                <h3 class="card-name subtitle">Tom Ford</h3>
+                <h3 class="card-name">Tom Ford</h3>
                 <p class="job-title">Frontend Developer</p>
                 <ul class="social-list list">
                   <li class="social-item">
@@ -282,14 +395,18 @@
             </li>
             <li class="team-item">
               <img
+                srcset="
+                  ./images/camila-garcia.jpg    1x,
+                  ./images/camila-garcia-2x.jpg 2x
+                "
                 class="card-photo"
-                src="./images/marketing.jpg"
+                src="./images/camila-garcia.jpg"
                 alt="Photo of a marketer"
                 width="264"
                 height="260"
               />
               <div class="card-name-container">
-                <h3 class="card-name subtitle">Camila Garcia</h3>
+                <h3 class="card-name">Camila Garcia</h3>
                 <p class="job-title">Marketing</p>
                 <ul class="social-list list">
                   <li class="social-item">
@@ -340,14 +457,18 @@
             </li>
             <li class="team-item">
               <img
+                srcset="
+                  ./images/daniel-wilson.jpg    1x,
+                  ./images/daniel-wilson-2x.jpg 2x
+                "
                 class="card-photo"
-                src="./images/ui_designer.jpg"
+                src="./images/daniel-wilson.jpg"
                 alt="Yui designer's photo"
                 width="264"
                 height="260"
               />
               <div class="card-name-container">
-                <h3 class="card-name subtitle">Daniel Wilson</h3>
+                <h3 class="card-name">Daniel Wilson</h3>
                 <p class="job-title">UI Designer</p>
                 <ul class="social-list list">
                   <li class="social-item">
@@ -623,5 +744,6 @@
     </div>
 
     <script src="./js/modal.js"></script>
+    <script src="./js/mobil-menu.js"></script>
   </body>
 </html>
