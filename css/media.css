@@ -83,22 +83,22 @@
   .header-menu-link:focus {
     color: var(--ocean-color);
   }
+
+    .current {
+      position: relative;
+      color: var(--ocean-color);
+    }
   
-  .current {
-    position: relative;
-    color: var(--ocean-color);
-  }
-  
-  .current::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 4px;
-    background-color: var(--ocean-color);
-    border-radius: 2px;
-  }
+    .current::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      height: 4px;
+      background-color: var(--ocean-color);
+      border-radius: 2px;
+    }
 
   .header-adress {
     display: flex;
@@ -217,6 +217,35 @@
   .subscription-form {
     flex-direction: row;
     gap: 24px;
+  }
+
+/*------PORTFOLIO------*/
+
+  .developments {
+    padding-top: 64px;
+    padding-bottom: 96px;
+  }
+
+  .filter-menu {
+    justify-content: center;
+    max-width: 768px;
+    margin-bottom: 64px;
+  }
+
+  .filter-button {
+    padding: 12px 24px;
+  }
+
+  .developments-list {
+    gap: 72px 24px;
+  }
+
+  .developments-item {
+    margin: 0;
+  }
+
+  .box {
+    max-width: 356px;
   }
 }
 
@@ -341,5 +370,25 @@
 
   .subscription-block {
     flex-grow: 1;
+  }
+
+/*------PORTFOLIO------*/
+
+  .developments {
+    padding-top: 96px;
+    padding-bottom: 120px;
+  }
+
+  .filter-menu {
+    max-width: 1158px;
+    margin-bottom: 72px;
+  }
+
+  .developments-link {
+    box-shadow: none;
+  }
+
+  .box {
+    max-width: 100%;
   }
 }
