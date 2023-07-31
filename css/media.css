@@ -244,9 +244,9 @@
     margin: 0;
   }
 
-  .box {
+  /* .box {
     max-width: 356px;
-  }
+  } */
 }
 
 
@@ -388,7 +388,7 @@
     box-shadow: none;
   }
 
-  .box {
+  /* .box {
     max-width: 100%;
-  }
+  } */
 }

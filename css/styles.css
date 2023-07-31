@@ -546,8 +546,8 @@ button {
 
 .box {
   position: relative;
-  width: 100%;
-  height: 300px;
+  /* width: 100%; */
+  /* height: 300px; */
   overflow: hidden;
 }
 
@@ -592,9 +592,6 @@ button {
 
 .text-content-box {
   padding: 32px 16px;
-  /* border-bottom: 1px solid var(--cornflower);
-  border-left: 1px solid var(--cornflower);
-  border-right: 1px solid var(--cornflower); */
 }
 
 /**-------------- FOOTER ---------------*/
