@@ -546,8 +546,6 @@ button {
 
 .box {
   position: relative;
-  /* width: 100%; */
-  /* height: 300px; */
   overflow: hidden;
 }
 
